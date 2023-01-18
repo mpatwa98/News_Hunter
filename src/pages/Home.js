@@ -32,8 +32,7 @@ function Home({ category, apikey }) {
   useEffect(() => {
     document.title = `News Hunter - ${capitalizeFirstLetter(category)}`;
     updateNews();
-    // eslint-disable-next-line
-  }, []);
+  }, [news]);
 
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
