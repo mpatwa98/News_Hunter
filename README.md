@@ -25,3 +25,9 @@ It is a news app. It uses [news api](https://newsapi.org/).
  6. Show page loading progress.
  7. Make About section.
  8. Make Footer. 
+ 9. Add feature to change country.
+ 10. Add feature to search for keyword.
+ 11. Add feature of Read more to jump to news content.
+ 12. Make navbar fixed.
+ 13. Add a default image for news which doesn't have.
+ 
