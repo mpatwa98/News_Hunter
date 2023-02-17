@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ setCountry }) {
   return (
     <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
@@ -133,7 +133,7 @@ function Navbar() {
             <li>
               <button
                 id="dropdownNavbarLink"
-                data-dropdown-toggle="dropdownNavbar"
+                data-dropdown-toggle="dropdownCategory"
                 className="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
               >
                 Category
@@ -152,7 +152,7 @@ function Navbar() {
                 </svg>
               </button>
               <div
-                id="dropdownNavbar"
+                id="dropdownCategory"
                 className="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
               >
                 <ul
@@ -221,7 +221,7 @@ function Navbar() {
             <li>
               <button
                 id="dropdownNavbarLink"
-                data-dropdown-toggle="dropdownNavbar"
+                data-dropdown-toggle="dropdownCountry"
                 className="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
               >
                 Country
@@ -240,68 +240,37 @@ function Navbar() {
                 </svg>
               </button>
               <div
-                id="dropdownNavbar"
+                id="dropdownCountry"
                 className="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
               >
                 <ul
                   className="py-1 text-sm text-gray-700 dark:text-gray-400"
                   aria-labelledby="dropdownLargeButton"
                 >
-                  <li>
-                    <Link
-                      to="/business"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      Canada
-                    </Link>
+                  <li className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                    <button onClick={() => setCountry("ca")}>Canada</button>
                   </li>
-                  <li>
-                    <Link
-                      to="/entertainment"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      France
-                    </Link>
+                  <li className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                    <button onClick={() => setCountry("fr")}>France</button>
                   </li>
-                  <li>
-                    <Link
-                      to="/health"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      Germany
-                    </Link>
+                  <li className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                    <button onClick={() => setCountry("de")}>Germany</button>
                   </li>
-                  <li>
-                    <Link
-                      to="/science"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                       India
-                    </Link>
+                  <li className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                    <button onClick={() => setCountry("in")}>India</button>
                   </li>
-                  <li>
-                    <Link
-                      to="/sports"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      Japan
-                    </Link>
+                  <li className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                    <button onClick={() => setCountry("jp")}>Japan</button>
                   </li>
-                  <li>
-                    <Link
-                      to="/technology"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
+                  <li className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                    <button onClick={() => setCountry("uk")}>
                       United Kingdom
-                    </Link>
+                    </button>
                   </li>
-                  <li>
-                    <Link
-                      to="/technology"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
+                  <li className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                    <button onClick={() => setCountry("us")}>
                       United States
-                    </Link>
+                    </button>
                   </li>
                 </ul>
               </div>

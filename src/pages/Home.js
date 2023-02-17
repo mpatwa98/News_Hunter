@@ -1,19 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { dataList } from "../data/data.js";
 
-function Home({ category, apikey }) {
+function Home({ category, apikey, country }) {
   const [news, setNews] = useState(dataList);
-  const [country, setCountry] = useState("in");
 
   const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apikey}`;
 
   const updateNews = async () => {
     const response = await fetch(url, {
       method: "GET",
-      // headers: {
-      // "Content-Type": "application/json",
-      // },
-      // body: JSON.stringify(data),
     });
 
     const data = await response.json();
@@ -32,7 +27,7 @@ function Home({ category, apikey }) {
   useEffect(() => {
     document.title = `News Hunter - ${capitalizeFirstLetter(category)}`;
     updateNews();
-  }, [category]);
+  }, [category, country]);
 
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
