@@ -48,21 +48,17 @@ function Home({ category, apikey, country }) {
           <div className="flex flex-wrap -m-4">
             {news.articles.map((e, id) => {
               return (
-                <div key={id}>
-                  <div className="xl:w-1/3 md:w-1/2 p-4">
-                    <div className="bg-white p-6 rounded-lg">
-                      <img
-                        className="lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72 rounded w-full object-cover object-center mb-6"
-                        src={e.urlToImage}
-                        alt="news"
-                      />
-                      <h2 className="text-lg text-gray-900 font-medium title-font mb-4">
-                        {e.title}
-                      </h2>
-                      <p className="leading-relaxed text-base">
-                        {e.description}
-                      </p>
-                    </div>
+                <div key={id} className="xl:w-1/3 md:w-1/2 p-4">
+                  <div className="bg-white p-6 rounded-lg">
+                    <img
+                      className="lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72 rounded w-full object-cover object-center mb-6"
+                      src={e.urlToImage}
+                      alt="news"
+                    />
+                    <h2 className="text-lg text-gray-900 font-medium title-font mb-4">
+                      {e.title}
+                    </h2>
+                    <p className="leading-relaxed text-base">{e.description}</p>
                   </div>
                 </div>
               );
